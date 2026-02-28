@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - SolarTechSolutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        nav {
+            background: #2a5298;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #ffa500; }
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SolarTechSolutions Gallery</h1>
+        <p>Explore our solar installations and projects</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="installations.html">Installations</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="gallery-grid">
+            <!-- Placeholder images -->
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x300?text=Solar+1" alt="Solar project 1">
+                <div class="gallery-caption">Solar Field A</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x300?text=Solar+2" alt="Solar project 2">
+                <div class="gallery-caption">Rooftop Installation</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x300?text=Solar+3" alt="Solar project 3">
+                <div class="gallery-caption">Commercial Array</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x300?text=Solar+4" alt="Solar project 4">
+                <div class="gallery-caption">Residential Setup</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x300?text=Solar+5" alt="Solar project 5">
+                <div class="gallery-caption">Community Farm</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x300?text=Solar+6" alt="Solar project 6">
+                <div class="gallery-caption">Industrial Park</div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 SolarTechSolutions. All rights reserved.</p>
+    </footer>
+</body>
+</html>

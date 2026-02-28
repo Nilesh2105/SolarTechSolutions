@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolarTechSolutions - Solar Technology Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .hero {
+            background: #f4f4f4;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #2a5298;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        button {
+            background: #2a5298;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #1e3c72;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <style>
+            .logo-svg {
+                width: 60px;
+                height: 60px;
+                cursor: pointer;
+                transition: transform 0.5s;
+            }
+            .logo-svg:hover { transform: rotate(360deg); }
+            .logo-container { display:inline-block; vertical-align:middle; margin-right:10px; }
+        </style>
+        <div class="logo-container">
+            <svg class="logo-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="12" fill="#FFA500"/>
+                <g stroke="#FFA500" stroke-width="4">
+                    <line x1="32" y1="0" x2="32" y2="12"/>
+                    <line x1="32" y1="52" x2="32" y2="64"/>
+                    <line x1="0" y1="32" x2="12" y2="32"/>
+                    <line x1="52" y1="32" x2="64" y2="32"/>
+                    <line x1="10" y1="10" x2="18" y2="18"/>
+                    <line x1="46" y1="46" x2="54" y2="54"/>
+                    <line x1="10" y1="54" x2="18" y2="46"/>
+                    <line x1="46" y1="18" x2="54" y2="10"/>
+                </g>
+            </svg>
+        </div>
+        <h1>☀️ SolarTechSolutions</h1>
+        <p>Advanced Solar Technology & Energy Management Platform</p>
+    </header>
+
+    <nav>
+        <ul style="list-style:none; display:flex; justify-content:center; gap:2rem; padding:1rem 0; background:#2a5298;">
+            <li><a href="index.html" style="color:white; text-decoration:none; font-weight:500;">Home</a></li>
+            <li><a href="about.html" style="color:white; text-decoration:none; font-weight:500;">About Us</a></li>
+            <li><a href="installations.html" style="color:white; text-decoration:none; font-weight:500;">Installations</a></li>
+            <li><a href="gallery.html" style="color:white; text-decoration:none; font-weight:500;">Gallery</a></li>
+            <li><a href="contact.html" style="color:white; text-decoration:none; font-weight:500;">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h2>Welcome to SolarTechSolutions</h2>
+            <p>Harness the power of solar energy with our comprehensive platform for system management, monitoring, and analytics.</p>
+            <button>Get Started</button>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <h3>🔍 System Monitoring</h3>
+                <p>Real-time monitoring of solar installations with detailed performance metrics and alerts.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 Energy Analytics</h3>
+                <p>Advanced analytics and insights to optimize energy production and consumption patterns.</p>
+            </div>
+            <div class="feature-card">
+                <h3>⚙️ Equipment Management</h3>
+                <p>Comprehensive management of solar panels, inverters, and other system components.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📈 Performance Reports</h3>
+                <p>Detailed reports and dashboards for tracking ROI and system efficiency.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SolarTechSolutions. All rights reserved.</p>
+    </footer>
+</body>
+</html>

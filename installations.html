@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Project Installations - SolarTechSolutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #333;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffa500;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-box .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffa500;
+        }
+
+        .stat-box .label {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #ff8c00;
+            margin: 2rem 0 1.5rem 0;
+            text-align: center;
+            border-bottom: 3px solid #ffa500;
+            padding-bottom: 1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(255, 140, 0, 0.2);
+        }
+
+        .project-image {
+            height: 250px;
+            background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: #ff8c00;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-location {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-specs {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .spec {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .spec label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .spec value {
+            color: #ffa500;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .project-btn {
+            background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+
+        .project-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+        }
+
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .before-after-box {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .before-after-image {
+            height: 300px;
+            background: linear-gradient(135deg, #888 0%, #666 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+        }
+
+        .before-after-label {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .before-after-content {
+            padding: 1.5rem;
+        }
+
+        .before-after-content h3 {
+            color: #ff8c00;
+            margin-bottom: 1rem;
+        }
+
+        .before-after-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .before-after-content li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #666;
+        }
+
+        .before-after-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ffa500;
+            font-weight: bold;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #ffa500;
+            background: white;
+            color: #ffa500;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #ffa500;
+            color: white;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <style>
+            .logo-svg {
+                width: 60px;
+                height: 60px;
+                cursor: pointer;
+                transition: transform 0.5s;
+            }
+            .logo-svg:hover { transform: rotate(360deg); }
+            .logo-container { display:inline-block; vertical-align:middle; margin-right:10px; }
+        </style>
+        <div class="logo-container">
+            <svg class="logo-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="12" fill="#FFA500"/>
+                <g stroke="#FFA500" stroke-width="4">
+                    <line x1="32" y1="0" x2="32" y2="12"/>
+                    <line x1="32" y1="52" x2="32" y2="64"/>
+                    <line x1="0" y1="32" x2="12" y2="32"/>
+                    <line x1="52" y1="32" x2="64" y2="32"/>
+                    <line x1="10" y1="10" x2="18" y2="18"/>
+                    <line x1="46" y1="46" x2="54" y2="54"/>
+                    <line x1="10" y1="54" x2="18" y2="46"/>
+                    <line x1="46" y1="18" x2="54" y2="10"/>
+                </g>
+            </svg>
+        </div>
+        <h1>☀️ Solar Project Installations</h1>
+        <p>Transforming spaces into sustainable energy solutions</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#projects">Our Projects</a></li>
+            <li><a href="#before-after">Before & After</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Statistics Section -->
+        <section class="stats">
+            <div class="stat-box">
+                <div class="number">150+</div>
+                <div class="label">Projects Completed</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">2.5 MW</div>
+                <div class="label">Total Capacity Installed</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">45,000</div>
+                <div class="label">MWh Annually Generated</div>
+            </div>
+            <div class="stat-box">
+                <div class="number">3500+</div>
+                <div class="label">Families Powered</div>
+            </div>
+        </section>
+
+        <!-- Filters -->
+        <div class="filters">
+            <button class="filter-btn active">All Projects</button>
+            <button class="filter-btn">Residential</button>
+            <button class="filter-btn">Commercial</button>
+            <button class="filter-btn">Industrial</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <h2 class="section-title" id="projects">Featured Installations</h2>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-image">☀️</div>
+                <div class="project-content">
+                    <h3>Downtown Office Complex</h3>
+                    <div class="project-location">📍 New York, NY</div>
+                    <div class="project-specs">
+                        <div class="spec">
+                            <label>Capacity:</label>
+                            <value>250 kW</value>
+                        </div>
+                        <div class="spec">
+                            <label>Panels:</label>
+                            <value>850 units</value>
+                        </div>
+                        <div class="spec">
+                            <label>Annual Output:</label>
+                            <value>320,000 kWh</value>
+                        </div>
+                        <div class="spec">
+                            <label>Installation:</label>
+                            <value>Q2 2025</value>
+                        </div>
+                    </div>
+                    <p class="project-description">Rooftop solar installation for a 15-story commercial office building with integrated battery storage system.</p>
+                    <button class="project-btn">View Details</button>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-image">🏠</div>
+                <div class="project-content">
+                    <h3>Suburban Residence</h3>
+                    <div class="project-location">📍 Austin, TX</div>
+                    <div class="project-specs">
+                        <div class="spec">
+                            <label>Capacity:</label>
+                            <value>8.5 kW</value>
+                        </div>
+                        <div class="spec">
+                            <label>Panels:</label>
+                            <value>25 units</value>
+                        </div>
+                        <div class="spec">
+                            <label>Annual Output:</label>
+                            <value>14,200 kWh</value>
+                        </div>
+                        <div class="spec">
+                            <label>Installation:</label>
+                            <value>Q4 2025</value>
+                        </div>
+                    </div>
+                    <p class="project-description">Residential solar system with Tesla Powerwall battery backup for energy independence and emergency power.</p>
+                    <button class="project-btn">View Details</button>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div class="project-image">🏭</div>
+                <div class="project-content">
+                    <h3>Industrial Manufacturing</h3>
+                    <div class="project-location">📍 Phoenix, AZ</div>
+                    <div class="project-specs">
+                        <div class="spec">
+                            <label>Capacity:</label>
+                            <value>500 kW</value>
+                        </div>
+                        <div class="spec">
+                            <label>Panels:</label>
+                            <value>1,600 units</value>
+                        </div>
+                        <div class="spec">
+                            <label>Annual Output:</label>
+                            <value>750,000 kWh</value>
+                        </div>
+                        <div class="spec">
+                            <label>Installation:</label>
+                            <value>Q1 2026</value>
+                        </div>
+                    </div>
+                    <p class="project-description">Large-scale ground-mounted solar array for manufacturing facility with real-time monitoring and grid export capabilities.</p>
+                    <button class="project-btn">View Details</button>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div class="project-image">🏬</div>
+                <div class="project-content">
+                    <h3>Retail Shopping Center</h3>
+                    <div class="project-location">📍 Denver, CO</div>
+                    <div class="project-specs">
+                        <div class="spec">
+                            <label>Capacity:</label>
+                            <value>180 kW</value>
+                        </div>
+                        <div class="spec">
+                            <label>Panels:</label>
+                            <value>600 units</value>
+                        </div>
+                        <div class="spec">
+                            <label>Annual Output:</label>
+                            <value>265,000 kWh</value>
+                        </div>
+                        <div class="spec">
+                            <label>Installation:</label>
+                            <value>Q3 2025</value>
+                        </div>
+                    </div>
+                    <p class="project-description">Canopy-style solar parking structure providing shade and clean energy for shopping center visitors and operations.</p>
+                    <button class="project-btn">View Details</button>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card">
+                <div class="project-image">🏫</div>
+                <div class="project-content">
+                    <h3>Educational Institution</h3>
+                    <div class="project-location">📍 San Francisco, CA</div>
+                    <div class="project-specs">
+                        <div class="spec">
+                            <label>Capacity:</label>
+                            <value>120 kW</label>
+                            <value>120 kW</value>
+                        </div>
+                        <div class="spec">
+                            <label>Panels:</label>
+                            <value>400 units</value>
+                        </div>
+                        <div class="spec">
+                            <label>Annual Output:</label>
+                            <value>180,000 kWh</value>
+                        </div>
+                        <div class="spec">
+                            <label>Installation:</label>
+                            <value>Q2 2026</value>
+                        </div>
+                    </div>
+                    <p class="project-description">Campus-wide solar installation with educational monitoring system for student learning and sustainability programs.</p>
+                    <button class="project-btn">View Details</button>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card">
+                <div class="project-image">🌾</div>
+                <div class="project-content">
+                    <h3>Agricultural Farm</h3>
+                    <div class="project-location">📍 Iowa</div>
+                    <div class="project-specs">
+                        <div class="spec">
+                            <label>Capacity:</label>
+                            <value>75 kW</value>
+                        </div>
+                        <div class="spec">
+                            <label>Panels:</label>
+                            <value>250 units</value>
+                        </div>
+                        <div class="spec">
+                            <label>Annual Output:</label>
+                            <value>105,000 kWh</value>
+                        </div>
+                        <div class="spec">
+                            <label>Installation:</label>
+                            <value>Q1 2025</value>
+                        </div>
+                    </div>
+                    <p class="project-description">Ground-mounted system designed for agricultural use with agrivoltaics integration for dual land use benefits.</p>
+                    <button class="project-btn">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Before & After Section -->
+        <h2 class="section-title" id="before-after">Before & After Transformation</h2>
+        <div class="before-after">
+            <div class="before-after-box">
+                <div class="before-after-image">
+                    <span class="before-after-label">BEFORE</span>
+                    🏢
+                </div>
+                <div class="before-after-content">
+                    <h3>Traditional Grid Dependent</h3>
+                    <ul>
+                        <li>100% grid electricity dependency</li>
+                        <li>Rising electricity bills</li>
+                        <li>High carbon footprint</li>
+                        <li>Vulnerable to outages</li>
+                        <li>No renewable energy usage</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="before-after-box">
+                <div class="before-after-image">
+                    <span class="before-after-label">AFTER</span>
+                    ☀️
+                </div>
+                <div class="before-after-content">
+                    <h3>Solar Powered & Sustainable</h3>
+                    <ul>
+                        <li>80%+ energy self-sufficiency</li>
+                        <li>Reduced monthly energy costs</li>
+                        <li>Zero carbon emissions</li>
+                        <li>Backup power with batteries</li>
+                        <li>Clean renewable energy production</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievements -->
+        <h2 class="section-title" id="achievements">Key Achievements</h2>
+        <div class="projects-grid">
+            <div class="stat-box" style="background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%); color: white;">
+                <div class="number" style="color: white;">$12M+</div>
+                <div class="label">Savings Generated for Clients</div>
+            </div>
+            <div class="stat-box" style="background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%); color: white;">
+                <div class="number" style="color: white;">180,000</div>
+                <div class="label">Tons of CO₂ Prevented</div>
+            </div>
+            <div class="stat-box" style="background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%); color: white;">
+                <div class="number" style="color: white;">98%</div>
+                <div class="label">Customer Satisfaction Rate</div>
+            </div>
+            <div class="stat-box" style="background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%); color: white;">
+                <div class="number" style="color: white;">25 yrs</div>
+                <div class="label">Average System Lifespan</div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <h3>SolarTechSolutions</h3>
+        <p>Powering a sustainable future with solar energy</p>
+        <p>&copy; 2026 SolarTechSolutions. All rights reserved.</p>
+        <p>📧 contact@solartechsolutions.com | 📞 1-800-SOLAR-TECH</p>
+    </footer>
+</body>
+</html>
