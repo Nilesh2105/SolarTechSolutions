@@ -4,105 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - SolarTechSolutions</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f4f4f4;
-        }
-        header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        nav {
-            background: #2a5298;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        nav a:hover { color: #ffa500; }
-        main {
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-            /* transparent so body image shows through */
-            background: transparent;
-            border-radius: 8px;
-            /* no shadow, keep it flat */
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            margin: 0.75rem 0 0.25rem;
-            font-weight: 600;
-            color: #1e3c72;
-        }
-        input, textarea {
-            padding: 0.75rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-        textarea { resize: vertical; }
-        .btn-submit {
-            margin-top: 1.5rem;
-            background: #ffa500;
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s;
-        }
-        .btn-submit:hover { background: #ff8c00; }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Contact SolarTechSolutions</h1>
-        <p>We'd love to hear from you!</p>
+        <div style="display:flex;align-items:center;gap:12px;">
+            <div class="logo">
+                <svg class="logo-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="32" cy="32" r="12" fill="#FFA500"/>
+                    <g stroke="#FFA500" stroke-width="4">
+                        <line x1="32" y1="0" x2="32" y2="12"/>
+                        <line x1="32" y1="52" x2="32" y2="64"/>
+                        <line x1="0" y1="32" x2="12" y2="32"/>
+                        <line x1="52" y1="32" x2="64" y2="32"/>
+                        <line x1="10" y1="10" x2="18" y2="18"/>
+                        <line x1="46" y1="46" x2="54" y2="54"/>
+                        <line x1="10" y1="54" x2="18" y2="46"/>
+                        <line x1="46" y1="18" x2="54" y2="10"/>
+                    </g>
+                </svg>
+            </div>
+            <h1 style="margin:0;">Contact</h1>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="installations.html">Installations</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+    <nav class="top-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="installations.html">Installations</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
     </nav>
     <main>
         <form action="#" method="post">
