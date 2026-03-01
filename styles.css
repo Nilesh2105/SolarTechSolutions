@@ -518,6 +518,114 @@ main > * {
 }
 
 /* ===========================
+   STORIES PAGE
+   =========================== */
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.story-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+}
+
+.story-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.story-image.placeholder {
+    background-size: cover;
+    background-position: center;
+}
+
+.story-image.placeholder1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.story-image.placeholder2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+.story-image.placeholder3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+.story-image.placeholder4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+.story-image.placeholder5 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+.story-image.placeholder6 { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+.story-image.placeholder7 { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+.story-image.placeholder8 { background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%); }
+.story-image.placeholder9 { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+.story-image.placeholder10 { background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%); }
+
+.story-header {
+    padding: 1.5rem 2rem 0;
+}
+
+.story-header h3 {
+    color: #2a5298;
+    margin-bottom: 0.5rem;
+}
+
+.story-location {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.story-content {
+    padding: 0 2rem 2rem;
+}
+
+.story-quote {
+    font-style: italic;
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-left: 4px solid #ffa500;
+}
+
+.story-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.story-stat {
+    text-align: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.story-stat strong {
+    display: block;
+    font-size: 1.5rem;
+    color: #ffa500;
+    margin-bottom: 0.25rem;
+}
+
+.story-stat span {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* ===========================
    CONTACT PAGE
    =========================== */
 
@@ -527,7 +635,7 @@ label {
     color: #1e3c72;
 }
 
-input, textarea {
+input, textarea, select {
     padding: 0.75rem;
     border: 1px solid #ccc;
     border-radius: 4px;
