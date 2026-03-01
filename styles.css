@@ -13,6 +13,9 @@ body {
     line-height: 1.6;
     color: #333;
     background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* ===========================
@@ -91,17 +94,27 @@ nav a {
    =========================== */
 
 main {
+    width: 100%;
+    margin: 0;
+    padding: 2rem 0;
+    flex: 1;
+}
+
+main > * {
     max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .hero {
     background: #f4f4f4;
     padding: 3rem 2rem;
     border-radius: 8px;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem;
     text-align: center;
+    max-width: 1200px;
 }
 
 .hero h2 {
@@ -113,9 +126,11 @@ main {
 .section-title {
     font-size: 2rem;
     color: #2a5298;
-    margin: 2rem 0 1.5rem 0;
+    margin: 2rem auto 1.5rem;
     border-bottom: 3px solid #1e3c72;
     padding-bottom: 0.5rem;
+    max-width: 1200px;
+    text-align: center;
 }
 
 /* ===========================
@@ -126,7 +141,8 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    max-width: 1200px;
 }
 
 .feature-card {
@@ -153,20 +169,19 @@ main {
    =========================== */
 
 .slider-container {
+    width: 100%;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 0 0 2rem 0;
     position: relative;
     background: white;
-    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
 }
 
 .slider-wrapper {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: calc(100vh - 140px);
     overflow: hidden;
 }
 
@@ -212,32 +227,7 @@ main {
 }
 
 .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.3s ease;
-    border-radius: 3px;
-    background-color: rgba(0, 0, 0, 0.5);
-    user-select: none;
-    z-index: 10;
-}
-
-.next {
-    right: 0;
-}
-
-.prev {
-    left: 0;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
 }
 
 .dots {
@@ -273,7 +263,8 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    max-width: 1200px;
 }
 
 .stat-box {
@@ -297,9 +288,10 @@ main {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    max-width: 1200px;
 }
 
 .project-card {
@@ -396,9 +388,10 @@ main {
 
 .before-after {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    max-width: 1200px;
 }
 
 .before-after-box {
@@ -463,7 +456,8 @@ main {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin: 2rem 0;
+    margin: 2rem auto;
+    max-width: 1200px;
     flex-wrap: wrap;
 }
 
@@ -606,6 +600,14 @@ footer {
 @media (max-width: 768px) {
     .before-after {
         grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
     nav ul {
