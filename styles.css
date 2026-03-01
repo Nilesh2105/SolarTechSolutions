@@ -1,0 +1,629 @@
+/* ===========================
+   GLOBAL STYLES
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f8f9fa;
+}
+
+/* ===========================
+   HEADER & NAVIGATION
+   =========================== */
+
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.logo-svg {
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.logo-svg:hover {
+    transform: rotate(360deg);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+nav {
+    background: #2a5298;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.top-nav a:hover {
+    color: #ffd07a;
+}
+
+/* ===========================
+   MAIN CONTENT
+   =========================== */
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.hero {
+    background: #f4f4f4;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    color: #1e3c72;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #2a5298;
+    margin: 2rem 0 1.5rem 0;
+    border-bottom: 3px solid #1e3c72;
+    padding-bottom: 0.5rem;
+}
+
+/* ===========================
+   CARDS & FEATURES
+   =========================== */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.feature-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    color: #2a5298;
+    margin-bottom: 1rem;
+}
+
+/* ===========================
+   SLIDER STYLES
+   =========================== */
+
+.slider-container {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.slide.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.slide-caption h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s ease;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.5);
+    user-select: none;
+    z-index: 10;
+}
+
+.next {
+    right: 0;
+}
+
+.prev {
+    left: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dots {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    padding: 1rem;
+    z-index: 10;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #2a5298;
+}
+
+/* ===========================
+   INSTALLATIONS PAGE
+   =========================== */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.stat-box {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box .number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffa500;
+}
+
+.stat-box .label {
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.2);
+}
+
+.project-image {
+    height: 250px;
+    background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content h3 {
+    color: #ff8c00;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-location {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-specs {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.spec {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.spec label {
+    font-weight: 600;
+    color: #333;
+}
+
+.spec value {
+    color: #ffa500;
+    font-weight: 500;
+}
+
+.project-description {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.project-btn {
+    background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.project-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(255, 140, 0, 0.3);
+}
+
+.before-after {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.before-after-box {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.before-after-image {
+    height: 300px;
+    background: linear-gradient(135deg, #888 0%, #666 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+    position: relative;
+}
+
+.before-after-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.before-after-content {
+    padding: 1.5rem;
+}
+
+.before-after-content h3 {
+    color: #ff8c00;
+    margin-bottom: 1rem;
+}
+
+.before-after-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.before-after-content li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #666;
+}
+
+.before-after-content li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #ffa500;
+    font-weight: bold;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #ffa500;
+    background: white;
+    color: #ffa500;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #ffa500;
+    color: white;
+}
+
+/* ===========================
+   GALLERY PAGE
+   =========================== */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* ===========================
+   CONTACT PAGE
+   =========================== */
+
+label {
+    margin: 0.75rem 0 0.25rem;
+    font-weight: 600;
+    color: #1e3c72;
+}
+
+input, textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.btn-submit {
+    margin-top: 1.5rem;
+    background: #ffa500;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background: #ff8c00;
+}
+
+/* ===========================
+   BUTTONS & COMMON
+   =========================== */
+
+button {
+    background: #2a5298;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #1e3c72;
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 768px) {
+    .before-after {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        padding: 0.5rem 1rem;
+    }
+
+    nav a {
+        display: block;
+        margin-right: 0;
+        padding: 0.5rem 0;
+    }
+}
